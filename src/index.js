@@ -47,4 +47,37 @@ const newImg = document.querySelector("#new-image");
 const newRating = document.querySelector("#new-rating");
 // console.log(newRating);
 const newComment = document.querySelector("#new-comment");
-console.log(newComment);
+// console.log(newComment);
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nameInput = e.target[0].value;
+    // console.log(nameInput);
+    const restInput = e.target[1].value;
+    // console.log(restInput);
+    const imgSrcInput = e.target[2].value;
+    // console.log(imgSrcInput);
+    const ratingInput = e.target[3].value;
+    // console.log(ratingInput);
+    const commentInput = e.target[4].value;
+    // console.log(commentInput);
+    const postObject = {
+        name:  nameInput ,
+        restaurant: restInput,
+        image: imgSrcInput ,
+        rating: ratingInput,
+        comment: commentInput,
+    };
+    console.log(postObject);
+
+    fetch('http://localhost:3000/ramens', {
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+            "accept": "application/json",
+        },
+        body: JSON.stringify(postObject),
+    }).then((resp) => resp.json())
+    .then((data) => renderRamen([data]))
+})
+

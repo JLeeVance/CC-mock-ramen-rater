@@ -39,6 +39,14 @@
       "image": "./assets/ramen/kojiro.jpg",
       "rating": 6,
       "comment": "Perfect for a cold night."
+    },
+    {
+      "name": "Furious Bowl",
+      "restaurant": "Furious Spoon",
+      "image": "https://img1.10bestmedia.com/Images/Photos/331802/p-Furious-Spoon-Chicken-Shio-Bowl_55_660x440.jpg",
+      "rating": "5",
+      "comment": "This is the BEST if you want something creamy. ",
+      "id": 6
     }
   ]
 }
