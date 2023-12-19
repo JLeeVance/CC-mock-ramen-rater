@@ -27,12 +27,12 @@ function renderRamen(data){
         imgSrc = ramenObj.image
         // console.log(imgSrc)
         imgTag.src = imgSrc
-        const li = document.createElement("li");
-        li.appendChild(imgTag);
-        div.appendChild(li);
+        // const li = document.createElement("li");
+        // li.appendChild(imgTag);
+        div.appendChild(imgTag);
 
 
-        li.addEventListener('click', () => {
+        imgTag.addEventListener('click', () => {
             ramenName.textContent = ramenObj.name;
             ramenRestaurant.textContent = ramenObj.restaurant;
             displayRamen.src = ramenObj.image;
