@@ -12,7 +12,13 @@ const ratingDisplay = document.querySelector("#rating-display");
 // console.log(ratingDisplay);
 const commentDisplay = document.querySelector("#comment-display");
 // console.log(commentDisplay);
-
+function setDefault (data) {
+    ramenName.textContent = data[0].name,
+    ramenRestaurant.textContent = data[0].restaurant,
+    displayRamen.src = data[0].image,
+    ratingDisplay.textContent = data[0].rating,
+    commentDisplay.textContent = data[0].comment
+};
 
 function renderRamen(data){
     data.forEach((ramenObj) => {
@@ -34,6 +40,8 @@ function renderRamen(data){
             commentDisplay.textContent = ramenObj.comment;
         })
     })
+    setDefault(data);
+    
 }
 
 const form = document.querySelector("form");
@@ -80,4 +88,3 @@ form.addEventListener("submit", (e) => {
     }).then((resp) => resp.json())
     .then((data) => renderRamen([data]))
 })
-
